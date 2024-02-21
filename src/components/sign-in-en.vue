@@ -37,12 +37,15 @@
         <ol></ol>
         <span>You dont have account? <a href="/signup">Sing up</a> </span>
     </div>
-    <img alt="car logo" class="car" src="@/assets/Images/Car.png" width="125" height="125" />
+
 
 </template>
 <script setup>
     import { toast } from 'vue3-toastify';
     import 'vue3-toastify/dist/index.css';
+    import { useStore } from 'vuex';
+
+    const store = useStore(); // Access the store directly within setup
 </script>
 <script>
     export default {
@@ -56,7 +59,7 @@
         methods: {
             async signIn() {
                 try {
-                    const response = await fetch('https://smartgarageproject.com/Login', {
+                    const response = await fetch('https://backend.smartgarageproject.com/Login', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -69,10 +72,9 @@
 
                     if (response.ok) {
                         console.log('Sign in successful');
-
                         const data = await response.json();
                         localStorage.setItem("JwtAcessToken", 'Bearer ' + data.accessToken)
-
+                      
                         window.location.href = '/';
                         // Redirect to another page or perform other actions
                     } else {
@@ -82,7 +84,7 @@
                     }
                 } catch (error) {
                     console.error('Error signing in:', error);
-                    toast.error('wrong password', { autoClose: 3000 });
+                    toast.error('something wrong', { autoClose: 3000 });
 
                     // Handle error
                 }

@@ -15,13 +15,13 @@
 
                 <Flicking :options="{ circular: false }" :plugins="plugins">
                     <div class="card-panel">
-                        <img alt="car logo" class="car" src="@/assets/Images/Home1.jpg" width="400" height="600" />
+                        <img alt="car logo" class="car1" src="@/assets/Images/Home1.jpg" width="400" height="600" />
                     </div>
                     <div class="card-panel">
-                        <img alt="car logo" class="car" src="@/assets/Images/Home2.jpg" width="400" height="600" />
+                        <img alt="car logo" class="car2" src="@/assets/Images/Home2.jpg" width="400" height="600" />
                     </div>
                     <div class="card-panel">
-                        <img alt="car logo" class="car" src="@/assets/Images/Home3.jpg" width="400" height="600" />
+                        <img alt="car logo" class="car3" src="@/assets/Images/Home3.jpg" width="400" height="600" />
                     </div>
                     <template #viewport>
                         <span class="flicking-arrow-prev is-thin"></span>
@@ -69,22 +69,25 @@
 </script>
 
 <style>
-    .background{
-        position:absolute;
-        width:160vh;
-        height:600px;
-        left:0;
-        z-index:-30;
-    }
-    .images {
-        right: 0;
+    .background {
         position: absolute;
+        width: 160vh;
+        height: 600px;
+        left: 0;
+        z-index: -30;
+    }
+
+    .images {
+        position: absolute;
+        right: 0;
         z-index: -1;
         width: 400px;
-        transform-origin: center right;
+
     }
+
     .elfsight {
         position: absolute;
-        height:200px;
+       top:0;
+       z-index:12;
     }
 </style>
